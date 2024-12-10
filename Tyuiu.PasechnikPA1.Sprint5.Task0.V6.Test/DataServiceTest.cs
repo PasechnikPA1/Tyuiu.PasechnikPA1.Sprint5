@@ -11,8 +11,9 @@ namespace Tyuiu.PasechnikPA1.Sprint5.Task0.V6.Test
             string path = @"C:\\Users\\Павел\\source\\repos\\Tyuiu.PasechnikPA1.Sprint5\\Tyuiu.PasechnikPA1.Sprint5.Task0.V6\\bin\\Debug\\net8.0\\OutputFileTask0.txt";
 
             FileInfo fileInfo = new FileInfo(path);
-            bool fileExist = fileInfo.Exists;
-            Assert.AreEqual(true, fileExist);
+            bool fileExists = fileInfo.Exists;
+            bool wait = true;
+            Assert.AreEqual(wait, fileExists);
         }
     }
 }
