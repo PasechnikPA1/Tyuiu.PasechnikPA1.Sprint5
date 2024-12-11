@@ -11,23 +11,27 @@ namespace Tyuiu.PasechnikPA1.Sprint5.Task5.V18.Lib
     {
         public double LoadFromDataFile(string path)
         {
-            double res = 1;
-
+            double res = 0;
+            double count = 0;
+            string[] array;
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
-                double x;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    x = Convert.ToDouble(line);
-                    if (Math.Abs(x) >= 10 && Math.Abs(x) <= 99)
+                    line = line.Replace(".", ",");
+                    array = line.Split(" ");
+                    for (int i = 0; i < array.Length; i++)
                     {
-                        res *= x;
+                        res = res + Math.Round(Convert.ToDouble(array[i]), 3);
+                        count++;
                     }
+
                 }
             }
-
-            return Math.Round(res, 3);
+            //double res = 6997;
+            //double count = 1000;
+            return res / count;
         }
     }
 }
