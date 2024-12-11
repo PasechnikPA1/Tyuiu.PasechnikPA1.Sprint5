@@ -6,7 +6,7 @@ namespace Tyuiu.PasechnikPA1.Sprint5.Task0.V6.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask0.txt";
+            string path = Path.Combine(new string[] { Path.GetTempPath(), "OutPutFileTask0.txt" });
             double z = x / (Math.Pow((Math.Pow(x, 2) + x), 0.5));
             z = Math.Round(z, 3);
             File.WriteAllText(path, Convert.ToString(z));
